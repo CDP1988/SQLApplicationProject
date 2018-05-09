@@ -86,7 +86,7 @@ public class DAOOracleImpl implements DAOModel {
     @Override
     public void removeStudentById(int id) {
         try {
-            preparedStatement = connection.prepareStatement("DELETE STUDENTS WHERE STUDENT_ID = ?)");
+            preparedStatement = connection.prepareStatement("DELETE STUDENTS WHERE STUDENT_ID = ?");
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
         } catch (SQLException e) {
@@ -118,7 +118,7 @@ public class DAOOracleImpl implements DAOModel {
     @Override
     public void updateStudentById(int id, String name, String group) {
         try {
-            preparedStatement = connection.prepareStatement("UPDATE STUDENTS SET STUDENT_NAME = ?, STUDENT_GROUP = ? WHERE STUDENT_ID = ?)");
+            preparedStatement = connection.prepareStatement("UPDATE STUDENTS SET STUDENT_NAME = ?, STUDENT_GROUP = ? WHERE STUDENT_ID = ?");
             preparedStatement.setString(1, name);
             preparedStatement.setString(2, group);
             preparedStatement.setInt(3, id);
